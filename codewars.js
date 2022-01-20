@@ -97,3 +97,10 @@ function stray(numbers){
 var isSquare = function(arr){
     return (arr.length) ? arr.every(x=>Math.sqrt(x)%1==0) : undefined;
 }
+
+//5
+//Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
+
+function even_or_odd(number) {
+    return number % 2 ? "Odd" : "Even"
+}
