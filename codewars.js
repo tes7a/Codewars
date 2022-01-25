@@ -115,3 +115,14 @@ function even_or_odd(number) {
 function twiceAsOld(dadYearsOld, sonYearsOld) {
     return Math.abs(dadYearsOld - 2 * sonYearsOld);
 }
+
+//7
+
+////  Функция sum принимает параметром целые положительные
+// // числа (неопределённое кол-во) и возвращает их сумму (rest).
+//
+export function sum( ...nums) {
+   return nums.reduce((ac,vl) => {
+       return  ac + vl
+   },0)
+}
