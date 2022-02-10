@@ -161,3 +161,10 @@ export function getTriangleType(a,b,c) {
 function twiceAsOld(dadYearsOld, sonYearsOld) {
     return Math.abs(dadYearsOld - 2 * sonYearsOld);
 }
+
+//10
+//Write a function that checks if a given string (case insensitive) is a palindrome.
+
+const isPalindrome = (x) => {
+    return x.split("").reverse().join("").toLowerCase() === x.toLowerCase() ? true : false
+}
