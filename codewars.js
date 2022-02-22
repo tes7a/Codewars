@@ -218,3 +218,10 @@ function greet(name){
 var a = "code";
 var b = "wa.rs";
 var name = a + b;
+
+//15
+//Write a function called repeatStr which repeats the given string string exactly n times.
+
+function repeatStr (n, s) {
+    return s.repeat(n);
+}
