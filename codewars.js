@@ -121,7 +121,7 @@ function twiceAsOld(dadYearsOld, sonYearsOld) {
 ////  Функция sum принимает параметром целые положительные
 // // числа (неопределённое кол-во) и возвращает их сумму (rest).
 //
-function sum( ...nums) {
+export function sum( ...nums) {
    return nums.reduce((ac,vl) => {
        return  ac + vl
    },0)
@@ -137,7 +137,7 @@ function sum( ...nums) {
 //  - "11", если треугольник обычный,
 //  - "00", если такого треугольника не существует.
 
-function getTriangleType(a,b,c) {
+export function getTriangleType(a,b,c) {
     if (a + b >= c && b + c >= a && a + c >= b) {
         if (a === b && c === b) {
             return "10"
@@ -163,6 +163,69 @@ function twiceAsOld(dadYearsOld, sonYearsOld) {
 }
 
 //10
+//Write a function that checks if a given string (case insensitive) is a palindrome.
+
+const isPalindrome = (x) => {
+    return x.split("").reverse().join("").toLowerCase() === x.toLowerCase() ? true : false
+}
+
+//11
+//Define a method hello that returns "Hello, Name!" to a given name, or says Hello, World! if name is not given (or passed as an empty String).
+//
+// Assuming that name is a String and it checks for user typos to return a name with a first capital letter (Xxxx).
+//
+// Examples:
+//
+// hello "john"   => "Hello, John!"
+// hello "aliCE"  => "Hello, Alice!"
+// hello          => "Hello, World!" # name not given
+// hello ""       => "Hello, World!" # name is an empty String
+
+const hello = s =>
+    `Hello, ${s ? (s[0].toUpperCase() + s.slice(1).toLowerCase()) : 'World'}!`;
+
+//12
+//Create a function that takes 2 integers in form of a string as an input, and outputs the sum (also as a string):
+//
+// Example: (Input1, Input2 -->Output)
+//
+// "4",  "5" --> "9"
+// "34", "5" --> "39"
+// "", "" --> "0"
+// "2", "" --> "2"
+// "-5", "3" --> "-2"
+// Notes:
+//
+// If either input is an empty string, consider it as zero.
+//
+// Inputs and the expected output will never exceed the signed 32-bit integer limit (2^31 - 1)
+
+const sumStr = (a,b) =>  Number(a) + Number(b)+ ''
+
+
+//13
+//Jenny has written a function that returns a greeting for a user. However, she's in love with Johnny, and would like to greet him slightly different. She added a special case to her function, but she made a mistake.
+//
+// Can you help her?
+
+function greet(name){
+    return "Hello, " + (name == "Johnny" ? "my love" : name) + "!";
+}
+
+//14
+//This code should store "codewa.rs" as a variable called name but it's not working. Can you figure out why?
+
+var a = "code";
+var b = "wa.rs";
+var name = a + b;
+
+//15
+//Write a function called repeatStr which repeats the given string string exactly n times.
+
+function repeatStr (n, s) {
+    return s.repeat(n);
+}
+//6
 // Реализовать функцию sum которая суммирует 2 числа следующим образом sum(3)(6) === 9
 
 function sumNumber (value) {
@@ -173,8 +236,8 @@ function sumNumber (value) {
 
 console.log(sumNumber(5)(5));
 
-//11
-// Переписать функцию из Task 10 так, что бы она принимала число в качестве аргумента и это число было стартовым значением счетчика
+//17
+// Переписать функцию из Task 16 так, что бы она принимала число в качестве аргумента и это число было стартовым значением счетчика
 // и возвращала следующий объект методов:
 // increase: +1
 // decrease: -1
