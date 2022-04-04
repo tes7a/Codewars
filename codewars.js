@@ -121,7 +121,7 @@ function twiceAsOld(dadYearsOld, sonYearsOld) {
 ////  Функция sum принимает параметром целые положительные
 // // числа (неопределённое кол-во) и возвращает их сумму (rest).
 //
-export function sum( ...nums) {
+function sum( ...nums) {
    return nums.reduce((ac,vl) => {
        return  ac + vl
    },0)
@@ -137,7 +137,7 @@ export function sum( ...nums) {
 //  - "11", если треугольник обычный,
 //  - "00", если такого треугольника не существует.
 
-export function getTriangleType(a,b,c) {
+function getTriangleType(a,b,c) {
     if (a + b >= c && b + c >= a && a + c >= b) {
         if (a === b && c === b) {
             return "10"
@@ -161,3 +161,47 @@ export function getTriangleType(a,b,c) {
 function twiceAsOld(dadYearsOld, sonYearsOld) {
     return Math.abs(dadYearsOld - 2 * sonYearsOld);
 }
+
+//10
+// Реализовать функцию sum которая суммирует 2 числа следующим образом sum(3)(6) === 9
+
+function sumNumber (value) {
+    return function sum1(value1) {
+        return value + value1
+    }
+}
+
+console.log(sumNumber(5)(5));
+
+//11
+// Переписать функцию из Task 10 так, что бы она принимала число в качестве аргумента и это число было стартовым значением счетчика
+// и возвращала следующий объект методов:
+// increase: +1
+// decrease: -1
+// reset: установить счетчик в 0;
+// set: установить счетчик в заданное значение;
+
+function SumTask11 (value) {
+     this.set = function (value1) {
+        return value = value1
+    }
+     this.increase = function () {
+        return value = value + 1
+    }
+    this.decrease = function () {
+        return value = value - 1
+    }
+    this.reset = function () {
+        return value = 0
+    }
+}
+
+const Task11 = new SumTask11(0)
+console.log(Task11.set(10))
+console.log(Task11.reset())
+console.log(Task11.increase())
+console.log(Task11.increase())
+console.log(Task11.increase())
+console.log(Task11.decrease())
+console.log(Task11.decrease())
+console.log(Task11.decrease())
