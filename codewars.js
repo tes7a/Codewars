@@ -121,11 +121,11 @@ function twiceAsOld(dadYearsOld, sonYearsOld) {
 ////  Функция sum принимает параметром целые положительные
 // // числа (неопределённое кол-во) и возвращает их сумму (rest).
 //
-export function sum( ...nums) {
-   return nums.reduce((ac,vl) => {
-       return  ac + vl
-   },0)
-}
+// export function sum( ...nums) {
+//    return nums.reduce((ac,vl) => {
+//        return  ac + vl
+//    },0)
+// }
 
 // 8
 
@@ -137,19 +137,19 @@ export function sum( ...nums) {
 //  - "11", если треугольник обычный,
 //  - "00", если такого треугольника не существует.
 
-export function getTriangleType(a,b,c) {
-    if (a + b >= c && b + c >= a && a + c >= b) {
-        if (a === b && c === b) {
-            return "10"
-        } else if (a === b || a === c || c === b) {
-            return "01"
-        } else {
-            return "11"
-        }
-    } else {
-        return "00"
-    }
-}
+// export function getTriangleType(a,b,c) {
+//     if (a + b >= c && b + c >= a && a + c >= b) {
+//         if (a === b && c === b) {
+//             return "10"
+//         } else if (a === b || a === c || c === b) {
+//             return "01"
+//         } else {
+//             return "11"
+//         }
+//     } else {
+//         return "00"
+//     }
+// }
 
 //9
 // Your function takes two arguments:
@@ -224,6 +224,43 @@ var name = a + b;
 
 function repeatStr (n, s) {
     return s.repeat(n);
+}
+
+//16
+//Your boss decided to save money by purchasing some cut-rate optical character recognition software for scanning in the text of old novels to your database. At first it seems to capture words okay, but you quickly notice that it throws in a lot of numbers at random places in the text.
+//
+// Examples (input -> output)
+// '! !'                 -> '! !'
+// '123456789'           -> ''
+// 'This looks5 grea8t!' -> 'This looks great!'
+// Your harried co-workers are looking to you for a solution to take this garbled text and remove all of the numbers. Your program will take in a string and clean out all numeric characters, and return a string with spacing and special characters ~#$%^&!@*():;"'.,? all intact.
+
+// function stringClean(s){
+//     return s.replace(/\d/g, "");
+// }
+
+const stringClean1 = (s) => s.split('').filter(s => s != parseInt(s)).join('');
+
+function stringClean(s){
+   const someArr = s.split('');
+    let emptyArr = [];
+    for (let i = 0; i < someArr.length; i++){
+        if(someArr[i] != parseInt(someArr[i])){
+            emptyArr.push(someArr[i])
+        }
+    }
+    return emptyArr.join('')
+
+}
+
+// console.log(stringClean("sdsadsa2 123213 12421142dsadsffds"));
+// console.log(stringClean1("sdsadsa2 123213 12421142dsadsffds"));
+
+
+//17 Complete the function which converts a binary number (given as a string) to a decimal number.
+
+function binToDec(bin){
+    return parseInt(bin, 2)
 }
 //6
 // Реализовать функцию sum которая суммирует 2 числа следующим образом sum(3)(6) === 9
