@@ -270,8 +270,8 @@ function sumNumber (value) {
         return value + value1
     }
 }
-
-console.log(sumNumber(5)(5));
+//
+// console.log(sumNumber(5)(5));
 
 //17
 // Переписать функцию из Task 16 так, что бы она принимала число в качестве аргумента и это число было стартовым значением счетчика
@@ -296,12 +296,27 @@ function SumTask11 (value) {
     }
 }
 
-const Task11 = new SumTask11(0)
-console.log(Task11.set(10))
-console.log(Task11.reset())
-console.log(Task11.increase())
-console.log(Task11.increase())
-console.log(Task11.increase())
-console.log(Task11.decrease())
-console.log(Task11.decrease())
-console.log(Task11.decrease())
+// const Task11 = new SumTask11(0)
+// console.log(Task11.set(10))
+// console.log(Task11.reset())
+// console.log(Task11.increase())
+// console.log(Task11.increase())
+// console.log(Task11.increase())
+// console.log(Task11.decrease())
+// console.log(Task11.decrease())
+// console.log(Task11.decrease())
+
+
+
+//18
+function howMuchWater(water, load, clothes){
+    if(load * 2  < clothes ) {
+        return 'Too much clothes';
+    } else if(load > clothes ){
+        return 'Not enough clothes';
+    }else {
+        return  Math.round(water * 1.1 ** (clothes - load) * 100) / 100
+    }
+}
+
+howMuchWater(10,11,20)
